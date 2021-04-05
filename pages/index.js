@@ -8,7 +8,7 @@ const HomePage = ({ meetups }) => (
       <title>Meetups</title>
       <meta name='description' content='List of highly active React meetups!' />
     </Head>
-    <MeetupList meetups={meetups} />;
+    <MeetupList meetups={meetups} />
   </>
 );
 

@@ -3,8 +3,8 @@ import classes from './MeetupList.module.css';
 
 const MeetupList = ({ meetups }) => (
   <ul className={classes.list}>
-    {meetups.map(({ id, image, title, address }) => (
-      <MeetupItem key={id} id={id} image={image} title={title} address={address} />
+    {meetups.map((meetup) => (
+      <MeetupItem key={meetup.id} {...meetup} />
     ))}
   </ul>
 );
