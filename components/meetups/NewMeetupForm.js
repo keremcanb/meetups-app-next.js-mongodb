@@ -19,6 +19,7 @@ const NewMeetupForm = ({ onAddMeetup }) => {
   }
 
   return (
+    // Wrap with Card component
     <Card>
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>

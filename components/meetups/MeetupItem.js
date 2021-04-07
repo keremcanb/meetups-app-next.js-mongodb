@@ -7,6 +7,7 @@ const MeetupItem = ({ id, image, title, address }) => {
 
   return (
     <li className={classes.item}>
+      {/* Wrap with Card component */}
       <Card>
         <div className={classes.image}>
           <img src={image} alt={title} />
