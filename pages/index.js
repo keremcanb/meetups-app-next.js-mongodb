@@ -14,7 +14,7 @@ const HomePage = ({ meetups }) => (
 );
 
 // Fetch data from db/api/localstorage for pre rendering. Executed on server side (during build process).
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const client = new MongoClient(
     `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@${process.env.MONGO_URI}`,
     {
@@ -38,8 +38,8 @@ export async function getStaticProps() {
         id: _id.toString()
       }))
     },
-    // Incremental static generation: Regenerate page every 1 second if there is request coming for page.
-    revalidate: 3600
+    // Incremental static generation: Regenerate page every x second if there is request coming for page.
+    revalidate: 86400
   };
 }
 

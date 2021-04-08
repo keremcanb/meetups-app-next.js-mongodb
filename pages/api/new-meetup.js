@@ -2,7 +2,7 @@ import { MongoClient } from 'mongodb';
 
 // /api/new-meetup
 // POST /api/new-meetup
-async function handler(req, res) {
+const handler = async (req, res) => {
   if (req.method === 'POST') {
     const data = req.body;
     const client = new MongoClient(
@@ -20,6 +20,6 @@ async function handler(req, res) {
     client.close();
     res.status(201).json({ message: 'Meetup inserted!' });
   }
-}
+};
 
 export default handler;

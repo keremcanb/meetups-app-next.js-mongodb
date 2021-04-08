@@ -12,7 +12,7 @@ const MeetupDetails = ({ meetupData: { title, description, image, address } }) =
   </>
 );
 
-export async function getStaticPaths() {
+export const getStaticPaths= () => {
   const client = new MongoClient(
     `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@${process.env.MONGO_URI}`,
     {
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context) {
+export const getStaticProps= (context) => {
   // fetch data for a single meetup
   const meetupId = context.params.meetupId;
   const client = new MongoClient(
